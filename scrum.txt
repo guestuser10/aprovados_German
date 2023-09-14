@@ -1,0 +1,5 @@
+13/09/23
+>hoy en la reunion se pusieron en orden las ideas para el trabajo en equipo.
+    -optamos por empezar a ver tutoriales de la api para 
+        repasar django y hacer las diapositivas de angular
+14/09/23
