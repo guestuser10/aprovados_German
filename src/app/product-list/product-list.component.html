@@ -1,1 +1,7 @@
-<p>product-list works!</p>
+<h2>Product list</h2>
+<ul>
+    <li (click)="selectedproduct = 'webcam'" style="cursor: pointer;" >webcam</li>
+    <li (click)="selectedproduct = 'microphone'" style="cursor: pointer;">microphone</li>
+    <li (click)="selectedproduct = 'keyboard'" style="cursor: pointer;">keyboard</li>
+</ul>
+<app-product-detail [name]="selectedproduct" (bought) = "onbuy()" ></app-product-detail>
