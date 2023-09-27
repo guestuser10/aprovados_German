@@ -8,7 +8,9 @@ import { ProductDetailComponent } from '../product-detail/product-detail.compone
 })
 export class ProductListComponent implements AfterViewInit{
   @ViewChild(ProductDetailComponent) productDetail: ProductDetailComponent | undefined;
-  selectedproduct = 'Yuumi';
+  selectedproduct = '';
+  noProduct: any;
+  products = ['webcam','microphone', 'keyboard'];
   onbuy() {
     window.alert(`you just bought ${this.selectedproduct}!`);
   }
@@ -16,5 +18,8 @@ export class ProductListComponent implements AfterViewInit{
     if (this.productDetail) {
       console.log(this.productDetail.name);
     }
+  }
+  trackByProducts(index:number, name:string): string { 
+    return name
   }
 }

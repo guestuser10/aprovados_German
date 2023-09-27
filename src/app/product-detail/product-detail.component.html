@@ -1,4 +1,12 @@
-<h2>Product details</h2>
-<h3>{{name}}</h3>
-<button (click)="buy()" style="cursor: pointer;">Buy Now!</button>
-<span><br>{{ProductName}}</span>
+
+<div *ngIf="name">
+    <h2>Product details</h2>
+    <h3>{{name}}</h3>
+    <div [ngSwitch]="name">
+        <p *ngSwitchCase="'webcam'">{{name}} is used for video</p>
+        <p *ngSwitchCase="'microphone'">{{name}} is used for audio in</p>
+        <p *ngSwitchCase="'keyboard'">{{name}} is used for general use</p>
+    </div>
+    <button (click)="buy()" style="cursor: pointer;">Buy Now!</button>
+    <!--<span><br>{{ProductName}}</span>-->
+</div>
