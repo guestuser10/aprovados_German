@@ -1,4 +1,5 @@
 <h2>Product list</h2>
+<h3>Offers</h3>
 <ul>
     <!--<li (click)="selectedproduct = 'webcam'" style="cursor: pointer;" >webcam</li>
     <li (click)="selectedproduct = 'microphone'" style="cursor: pointer;">microphone</li>
@@ -7,7 +8,7 @@
     (click)="selectedproduct = product">
         {{i+1}}.- {{product}}
     </li>-->
-    <li *ngFor="let product of products | slice:0:3; trackBy: trackByProducts" 
+    <li *ngFor="let product of products | sort; trackBy: trackByProducts" 
     (click)="selectedproduct = product"
     style="cursor: pointer;">
         {{product.name | uppercase}} <b style="font-size: larger;">{{product.precio | currency : 'USD'}}</b>
@@ -22,7 +23,7 @@
     [product]="{ name: selectedproduct.name, precio: selectedproduct.precio}" 
     (bought) = "onbuy()" 
 ></app-product-detail>
-<ng-template #noProduct>
+<ng-template appProductHost>
     no product selected
 </ng-template>
 
