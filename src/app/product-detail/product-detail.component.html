@@ -1,11 +1,11 @@
 
-<div *ngIf="name">
+<div *ngIf="product?.name">
     <h2>Product details</h2>
-    <h3>{{name}}</h3>
-    <div [ngSwitch]="name">
-        <p *ngSwitchCase="'webcam'">{{name}} is used for video</p>
-        <p *ngSwitchCase="'microphone'">{{name}} is used for audio in</p>
-        <p *ngSwitchCase="'keyboard'">{{name}} is used for general use</p>
+    <h3>{{product?.name}}</h3>
+    <div [ngSwitch]="product?.name">
+        <p *ngSwitchCase="'webcam'">{{product?.name}} is used for video</p>
+        <p *ngSwitchCase="'microphone'">{{product?.name}} is used for audio in</p>
+        <p *ngSwitchCase="'keyboard'">{{product?.name}} is used for general use</p>
     </div>
     <button (click)="buy()" style="cursor: pointer;">Buy Now!</button>
     <!--<span><br>{{ProductName}}</span>-->

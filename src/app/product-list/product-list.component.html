@@ -10,13 +10,13 @@
     <li *ngFor="let product of products; trackBy: trackByProducts" 
     (click)="selectedproduct = product"
     style="cursor: pointer;">
-        {{product}}
+        {{product.name}} <b style="font-size: larger;">${{product.precio}}</b>
     </li>
 </ul>
 <app-product-detail 
     *ngIf="selectedproduct; else noProduct"
     #product
-    [name]="selectedproduct" 
+    [product]="{ name: selectedproduct.name, precio: selectedproduct.precio}" 
     (bought) = "onbuy()" 
 ></app-product-detail>
 <ng-template #noProduct>
