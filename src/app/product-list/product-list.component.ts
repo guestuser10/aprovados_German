@@ -24,6 +24,11 @@ export class ProductListComponent implements AfterViewInit{
       precio: 80
     },
   ];
+  products2 = {
+    'webcam': 100,
+    'mein kaft': 200,
+    'keyboard':80
+  }
   onbuy() {
     window.alert(`you just bought ${this.selectedproduct?.name}! that cost ${this.selectedproduct?.precio}`);
   }
@@ -35,4 +40,5 @@ export class ProductListComponent implements AfterViewInit{
   trackByProducts(index:number, name:Product): string { 
     return name.name 
   }
+  today = new Date();
 }

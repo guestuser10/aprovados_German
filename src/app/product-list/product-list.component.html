@@ -7,11 +7,14 @@
     (click)="selectedproduct = product">
         {{i+1}}.- {{product}}
     </li>-->
-    <li *ngFor="let product of products; trackBy: trackByProducts" 
+    <li *ngFor="let product of products | slice:0:3; trackBy: trackByProducts" 
     (click)="selectedproduct = product"
     style="cursor: pointer;">
-        {{product.name}} <b style="font-size: larger;">${{product.precio}}</b>
+        {{product.name | uppercase}} <b style="font-size: larger;">{{product.precio | currency : 'USD'}}</b>
     </li>
+    <!--<li *ngFor="let product of products2 | keyvalue;">
+        {{product.key}}
+    </li>-->
 </ul>
 <app-product-detail 
     *ngIf="selectedproduct; else noProduct"
@@ -22,5 +25,9 @@
 <ng-template #noProduct>
     no product selected
 </ng-template>
+
+<!--<p>{{products | json}}</p>-->
+<!--<p>{{today  | date}}</p>-->
+<!--<p> {{0.1234 | percent}}</p>-->
 <!--<p *ngIf="!selectedproduct">no product selected</p>-->
 <!--<span><br>{{product.name}}</span><br>-->
