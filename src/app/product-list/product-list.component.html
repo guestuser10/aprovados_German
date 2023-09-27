@@ -4,4 +4,10 @@
     <li (click)="selectedproduct = 'microphone'" style="cursor: pointer;">microphone</li>
     <li (click)="selectedproduct = 'keyboard'" style="cursor: pointer;">keyboard</li>
 </ul>
-<app-product-detail [name]="selectedproduct" (bought) = "onbuy()" ></app-product-detail>
+<app-product-detail 
+    #product
+    [name]="selectedproduct" 
+    (bought) = "onbuy()" 
+></app-product-detail>
+
+<span><br>{{product.name}}</span><br>
